@@ -1,14 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eyadnaksho <eyadnaksho@student.42.fr>      +#+  +:+       +#+        */
+/*   By: eynaksho <eynaksho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 17:27:27 by eyadnaksho        #+#    #+#             */
-/*   Updated: 2025/10/01 17:58:21 by eyadnaksho       ###   ########.fr       */
+/*   Created: 2025/03/19 19:42:09 by eynaksho          #+#    #+#             */
+/*   Updated: 2025/03/24 21:49:36 by eynaksho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
+/// @brief Outputs the string s into file descriptor
+/// @param s The string to output
+/// @param fd File descritor (destination)
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+		write(fd, s++, 1);
+}
