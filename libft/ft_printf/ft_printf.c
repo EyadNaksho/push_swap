@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eynaksho <eynaksho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eyadnaksho <eyadnaksho@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 22:50:11 by eynaksho          #+#    #+#             */
-/*   Updated: 2025/04/29 20:49:18 by eynaksho         ###   ########.fr       */
+/*   Updated: 2025/10/05 16:38:37 by eyadnaksho       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (i);
-}
-
-int	main(void)
-{
-	int x = 42;
-	int *ptr = &x;
-	int	i;
-
-	// i = printf("%c", "a string");
-	// printf("i: %d\n", i);
-	i = ft_printf("%c", "a string");
-	ft_printf("i: %d\n", i);
-	return (0);
 }

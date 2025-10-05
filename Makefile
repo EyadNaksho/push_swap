@@ -3,6 +3,7 @@ NAME				= push_swap
 
 # Directories
 LIBFT				= ./libft/libft.a
+PRINTF				= ./libft/ft_printf/libftprintf.a
 INC					= inc/
 SRC_DIR				= srcs/
 OBJ_DIR				= obj/
@@ -41,10 +42,13 @@ start:
 $(LIBFT):
 					@make -C ./libft
 
+$(PRINTF):
+					@make -C ./libft/ft_printf
+
 all: 				$(NAME)
 
-$(NAME): 			$(OBJ) $(LIBFT)
-					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+$(NAME): 			$(OBJ) $(LIBFT) $(PRINTF)
+					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) $(PRINTF) -o $(NAME)
 
 # Compile object files from source files
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
@@ -54,10 +58,12 @@ $(OBJ_DIR)%.o:		$(SRC_DIR)%.c
 clean:
 					@$(RM) -r $(OBJ_DIR)
 					@make clean -C ./libft
+					@make clean -C ./libft/ft_printf
 
 fclean: 			clean
 					@$(RM) $(NAME)
 					@$(RM) $(LIBFT)
+					@$(RM) $(PRINTF)
 
 re: 				fclean all
 
