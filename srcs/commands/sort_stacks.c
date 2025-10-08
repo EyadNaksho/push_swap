@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_stacks.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyadnaksho <eyadnaksho@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/06 18:59:35 by eyadnaksho        #+#    #+#             */
+/*   Updated: 2025/10/07 13:11:48 by eyadnaksho       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 static void	rotate_both(t_stack_node **a,
@@ -28,7 +40,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
 		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median)
-			&& !(cheapest_node->target_node->above_median))
+		&& !(cheapest_node->target_node->above_median))
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
